@@ -21,7 +21,10 @@ $this->view('relatorios/cabecalho');
         <tr>
         <?php
         foreach($fluxos as $fluxo) {
-            $temp = [];
+            /**
+             * Array temporário com preços por entidade da linha, removido posteriormente
+             */
+            $arrTemp = [];
             /**
             * Lista os fluxos de acordo com a classificação da natureza de lançamento
             */
@@ -37,19 +40,19 @@ $this->view('relatorios/cabecalho');
                 * Explode a entidade e seu devido preço, inserindo no array temporário, sendo a chave entidade e o valor o preço
                 */
                 $preco = preg_split('/[=>]/', $preco);
-                $temp[$preco[0]] = $preco[2];
+                $arrTemp[$preco[0]] = $preco[2];
             }
             /**
              * Lista os preços de acordo com as entidades da tabela
              */
             foreach($entidades as $key => $entidade) {
-                echo '<td style="width: 25%;text-align: '.(!empty($temp[$key]) && $temp[$key] > 0 ? 'right' : 'center').';">'.(!empty($temp[$key]) && $temp[$key] > 0 ? 'R$ '.number_format($temp[$key],2,",",".") : '-').'</td>';
+                echo '<td style="width: 25%;text-align: '.(!empty($arrTemp[$key]) && $arrTemp[$key] > 0 ? 'right' : 'center').';">'.(!empty($arrTemp[$key]) && $arrTemp[$key] > 0 ? 'R$ '.number_format($arrTemp[$key],2,",",".") : '-').'</td>';
             }
             echo '</tr>';
             /**
-             * Limpa a variável temporária, para liberar memória
+             * Limpa a array temporário, para liberar memória
              */
-            unset($temp);
+            unset($arrTemp);
         }
         ?>
         </tr>
