@@ -1,2 +1,2 @@
 # illi
-Arquivos referentes a empresa illimitar.
+Arquivos relacionados a empresa illimitar.
