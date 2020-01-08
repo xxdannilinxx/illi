@@ -6,7 +6,7 @@ $this->view('relatorios/cabecalho');
     <thead>
         <tr>
             <th style="width: 10%;text-align: center;">Classificação</th>
-            <th style="width: 25%;text-align: center;">Plano de Contas </th>
+            <th style="width: 25%;text-align: center;">Plano de Contas</th>
             <?php
             /**
              * Array de títulos da tabela, com as entidades
