@@ -12,7 +12,7 @@ $this->view('relatorios/cabecalho');
          * Array de títulos da tabela, com as entidades
          */
         foreach($entidades as $entidade) {
-         echo '<th style="width: 25%;text-align: center;">'.$entidade.'</th>';
+            echo '<th style="width: 25%;text-align: center;">'.$entidade.'</th>';
         }
         ?>
     </tr>
