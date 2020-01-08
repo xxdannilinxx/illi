@@ -32,7 +32,7 @@ $this->view('relatorios/cabecalho');
             echo '<td style="width: 10%;text-align: left;">'.$fluxo['classificacao'].'</td>';
             echo '<td style="width: 25%;text-align: left;">'.$fluxo['descricao'].'</td>';
             /**
-             * Repetição da lista de preços e entidades
+             * Repetição da lista de preços e entidades por fluxo
              */
             $listaEntidades = preg_split('/[,]/', preg_replace('/[][]/', '', $fluxo['array_entidade']));
             foreach($listaEntidades as $informacao) {
