@@ -34,13 +34,13 @@ $this->view('relatorios/cabecalho');
             /**
              * Repetição da lista de preços e entidades
              */
-            $precos = preg_split('/[,]/', preg_replace('/[][]/', '', $fluxo['array_entidade']));
-            foreach($precos as $preco) {
+            $listaEntidades = preg_split('/[,]/', preg_replace('/[][]/', '', $fluxo['array_entidade']));
+            foreach($listaEntidades as $informacao) {
                 /**
                 * Explode a entidade e seu devido preço, inserindo no array temporário, sendo a chave entidade e o valor o preço
                 */
-                $preco = preg_split('/[=>]/', $preco);
-                $arrTemp[$preco[0]] = $preco[2];
+                $informacao = preg_split('/[=>]/', $informacao);
+                $arrTemp[$informacao[0]] = $informacao[2];
             }
             /**
              * Lista os preços de acordo com as entidades da tabela
