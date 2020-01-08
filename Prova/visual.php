@@ -33,10 +33,10 @@ $this->view('relatorios/cabecalho');
              */
             $precos = preg_split('/[,]/', preg_replace('/[][]/', '', $fluxo['array_entidade']));
             foreach($precos as $preco) {
-                $preco = preg_split('/[=>]/', $preco);
                 /**
-                * Explode a entidade e seu devido preço, inserindo no array temporário
+                * Explode a entidade e seu devido preço, inserindo no array temporário, sendo a chave entidade e o valor o preço
                 */
+                $preco = preg_split('/[=>]/', $preco);
                 $temp[$preco[0]] = $preco[2];
             }
             /**
