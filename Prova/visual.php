@@ -37,7 +37,7 @@ $this->view('relatorios/cabecalho');
             $listaEntidades = preg_split('/[,]/', preg_replace('/[][]/', '', $fluxo['array_entidade']));
             foreach($listaEntidades as $informacao) {
                 /**
-                 * Explode a entidade e seu devido preço, inserindo no array temporário, sendo a chave entidade e o valor o preço
+                 * Cria array da entidade e seu devido preço, inserindo no array temporário, sendo a chave entidade e o valor o preço
                  */
                 $informacao = preg_split('/[=>]/', $informacao);
                 $arrTemp[$informacao[0]] = $informacao[2];
