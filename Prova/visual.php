@@ -9,8 +9,8 @@ $this->view('relatorios/cabecalho');
         <th style="width: 25%;text-align: center;">Plano de Contas </th>
         <?php
         /**
-        * Array de títulos da tabela, com as entidades
-        */
+         * Array de títulos da tabela, com as entidades
+         */
         foreach($entidades as $entidade) {
          echo '<th style="width: 25%;text-align: center;">'.$entidade.'</th>';
         }
@@ -26,8 +26,8 @@ $this->view('relatorios/cabecalho');
              */
             $arrTemp = [];
             /**
-            * Lista os fluxos de acordo com a classificação da natureza de lançamento
-            */
+             * Lista os fluxos de acordo com a classificação da natureza de lançamento
+             */
             echo '<tr>';
             echo '<td style="width: 10%;text-align: left;">'.$fluxo['classificacao'].'</td>';
             echo '<td style="width: 25%;text-align: left;">'.$fluxo['descricao'].'</td>';
@@ -37,8 +37,8 @@ $this->view('relatorios/cabecalho');
             $listaEntidades = preg_split('/[,]/', preg_replace('/[][]/', '', $fluxo['array_entidade']));
             foreach($listaEntidades as $informacao) {
                 /**
-                * Explode a entidade e seu devido preço, inserindo no array temporário, sendo a chave entidade e o valor o preço
-                */
+                 * Explode a entidade e seu devido preço, inserindo no array temporário, sendo a chave entidade e o valor o preço
+                 */
                 $informacao = preg_split('/[=>]/', $informacao);
                 $arrTemp[$informacao[0]] = $informacao[2];
             }
